@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise LMS with Avatar</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; } 
+        .avatar { width: 150px; height: auto; }
+        .lesson { margin: 20px 0; }
+        .complaint { color: red; }
+        .copy-button { cursor: pointer; background-color: lightblue; border: none; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Enterprise Learning Management System</h1>
+    <img src="avatar-priya.png" class="avatar" alt="Avatar Priya">
+    <p>Welcome to the LMS. Below you will find various lessons and interactive components.</p>
+
+    <div id="lessons">
+        <h2>Self-Paced Lessons</h2>
+        <div class="lesson">Lesson 1: Introduction to LMS</div>
+        <div class="lesson">Lesson 2: Using the Decision Tree</div>
+        <div class="lesson">Lesson 3: Customer Interactions</div>
+        <div class="lesson">Lesson 4: Final Assessment</div>
+    </div>
+
+    <div id="decision-tree">
+        <h2>Decision Tree</h2>
+        <p>Interactive decision tree will be implemented here.</p>
+    </div>
+
+    <div id="complaints">
+        <h2>Customer Complaints</h2>
+        <p class="complaint">1. Complaint about late deliveries.</p>
+        <p class="complaint">2. Issue with product quality.</p>
+        <p class="complaint">3. Problems with customer support.</p>
+        <!-- 12 more complaints here -->
+    </div>
+
+    <div id="responses">
+        <h2>Canned Responses</h2>
+        <button class="copy-button" onclick="copyResponse('Thank you for your feedback!')">Copy Response for Email</button>
+        <p id="feedback-response"></p>
+    </div>
+
+    <script>
+        function copyResponse(response) {
+            navigator.clipboard.writeText(response);
+            document.getElementById('feedback-response').innerText = 'Response copied: ' + response;
+        }
+        // Additional JavaScript for avatar narration and interactions can be added here
+    </script>
+</body>
+</html>
