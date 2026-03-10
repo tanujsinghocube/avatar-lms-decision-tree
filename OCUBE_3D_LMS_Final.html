@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCUBE Enterprise LMS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #canvas {
+            width: 100%;
+            height: 75%;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Login to OCUBE LMS</h1>
+        <input type="text" id="username" placeholder="Username">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="lesson" class="hidden">
+        <h1>3D Avatar Lessons</h1>
+        <div id="canvas"></div>
+        <button onclick="startNarration()">Start Lesson</button>
+        <button onclick="generateCertificate()">Download Certificate</button>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+        <div id="quiz" class="hidden">
+            <h2>Quiz</h2>
+            <!-- Quiz functionality to be implemented -->
+            <button onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+    </div>
+    <script>
+        let scene, camera, renderer;
+        let avatarMesh;
+
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight * 0.75);
+            document.getElementById('canvas').appendChild(renderer.domElement);
+
+            // Create an avatar (simple geometry for demonstration)
+            const geometry = new THREE.BoxGeometry(1, 1, 1);
+            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            avatarMesh = new THREE.Mesh(geometry, material);
+            scene.add(avatarMesh);
+            camera.position.z = 5;
+
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            avatarMesh.rotation.x += 0.01;
+            avatarMesh.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        function login() {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('lesson').classList.remove('hidden');
+            init();
+        }
+
+        function startNarration() {
+            const msg = new SpeechSynthesisUtterance("Welcome to the OCUBE Enterprise LMS. Let's start learning.");
+            window.speechSynthesis.speak(msg);
+        }
+
+        function generateCertificate() {
+            alert('Certificate generated!');
+            // Implement PDF generation functionality here.
+        }
+
+        function copyToClipboard() {
+            const text = "Your copied text";
+            navigator.clipboard.writeText(text);
+            alert('Copied to clipboard!');
+        }
+
+        function submitQuiz() {
+            alert('Quiz submitted!');
+            // Implement quiz submission functionality here.
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
