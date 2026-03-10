@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCUBE Enterprise LMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background: linear-gradient(to right, #4facfe, #00f2fe); }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        h1 { text-align: center; }
+        .avatar { /* CSS for animated avatar */ }
+        .login-screen, .lessons, .quiz, .certificate { margin-top: 20px; }
+        /* More styles... */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>OCUBE Enterprise LMS</h1>
+
+        <div class="login-screen">
+            <h2>Login</h2>
+            <input type="text" placeholder="Enter your name" id="userName" />
+            <button id="loginButton">Login</button>
+        </div>
+
+        <div class="avatar">
+            <!-- 3D style animated avatar will be displayed here -->
+        </div>
+
+        <div class="lessons">
+            <h2>Self-Paced Lessons</h2>
+            <!-- Content for 4 self-paced lessons -->
+        </div>
+
+        <div class="quiz">
+            <h2>Gamified Quiz</h2>
+            <!-- Quiz with points/stars system and animations -->
+        </div>
+
+        <div class="certificate">
+            <h2>Final Assessment</h2>
+            <!-- Final assessment content and certificate generation -->
+        </div>
+
+        <div class="decision-tree">
+            <h2>Decision Tree</h2>
+            <!-- Smart keyword search and VOC database entries -->
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript for voice, navigation, progress tracking, and other functionalities
+        const userName = document.getElementById('userName');
+        document.getElementById('loginButton').onclick = function() {
+            const name = userName.value;
+            if (name) {
+                alert('Welcome, ' + name + '!'); // Placeholder for welcome functionality
+            }
+        };
+        // Other scripts... (voice narration, quiz, certificate generation, etc.)
+    </script>
+</body>
+</html>
