@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCUBE Enterprise LMS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .gradient-background { background: linear-gradient(to right, #4facfe, #00f2fe); height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .container { text-align: center; }
+        input[type='text'] { width: 200px; padding: 10px; margin: 10px; }
+        .button { padding: 10px 20px; margin-top: 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        .avatar { width: 150px; height: 150px; margin: 20px; }
+        .progress-bar { width: 100%; background-color: #ddd; }
+        .progress { width: 0; height: 20px; background-color: #4caf50; }
+    </style>
+</head>
+<body>
+    <div class="gradient-background">
+        <div class="container">
+            <h1>Welcome to OCUBE Enterprise LMS</h1>
+            <img src="path_to_priya_avatar.png" alt="Priya Avatar" class="avatar">
+            <div id="loginScreen">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Enter Your Name">
+                <button class="button" onclick="loginUser()">Login</button>
+            </div>
+            <div id="lessons" style="display:none;">
+                <h2>Self-Paced Lessons</h2>
+                <!-- Lesson Content Goes Here -->
+            </div>
+            <div id="quiz" style="display:none;">
+                <h2>Gamified Quiz</h2>
+                <!-- Quiz Logic Goes Here -->
+            </div>
+            <div id="progressContainer" style="display:none;">
+                <div class="progress-bar">
+                    <div class="progress" id="progress" style="width: 0;"></div>
+                </div>
+            </div>
+            <script>
+                function loginUser() {
+                    document.getElementById('loginScreen').style.display = 'none';
+                    document.getElementById('lessons').style.display = 'block';
+                    // Initialize Lessons and Avatar Animation
+                }
+                // Other JavaScript functions for the different features will be added here
+            </script>
+        </div>
+    </div>
+</body>
+</html>
